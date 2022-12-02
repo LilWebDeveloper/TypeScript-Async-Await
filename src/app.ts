@@ -1,4 +1,4 @@
-const container = document.querySelector('.result')! as HTMLDivElement;
+const container = document.querySelector('.result')! as HTMLTableElement;
 const renderTable = async () => {
     const usersURL: string = 'http://localhost:3500/users';
     const companiesURL: string = 'http://localhost:3500/companies';
