@@ -1,25 +1,23 @@
 const container: Element = document.querySelector('.result')!;
-
 const renderTable = async () => {
     const usersURL: string = 'http://localhost:3500/users';
     const companiesURL: string = 'http://localhost:3500/companies';
     const userData: Response = await fetch(usersURL);
     const companiesData: Response = await fetch(companiesURL);
-
     interface CompanyUser{
-        company: string
-    }
+        company: string;
+    };
     interface ListUser extends ListCompany{
         email: string;
-        uris: CompanyUser
-    }
+        uris: CompanyUser;
+    };
     const userList: ListUser[] = await userData.json();
     interface ListCompany{
         name: string;
-        uri: string
-    }
+        uri: string;
+    };
     const compList: ListCompany[] = await companiesData.json();
-    let template: string
+    let template: string;
     template = '';
         for(var i of compList){
             template += '<tr><td>';
@@ -31,7 +29,7 @@ const renderTable = async () => {
                 }
             }
             template += "</td></tr>";
-        }
+        };
         container.innerHTML = template;
     
 };
