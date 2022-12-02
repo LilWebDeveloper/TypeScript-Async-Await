@@ -9,10 +9,8 @@ const renderTable = async () => {
     interface CompanyUser{
         company: string
     }
-    interface ListUser{
+    interface ListUser extends ListCompany{
         email: string;
-        name: string;
-        uri: string;
         uris: CompanyUser
     }
     const userList: ListUser[] = await userData.json();
