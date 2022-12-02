@@ -1,4 +1,4 @@
-const container = document.querySelector('.result')!;
+const container: Element = document.querySelector('.result')!;
 
 const renderTable = async () => {
     const usersURL: string = 'http://localhost:3500/users';
@@ -36,6 +36,5 @@ const renderTable = async () => {
         }
         container.innerHTML = template;
     
-    console.log(compList);
 };
 window.addEventListener("DOMContentLoaded", () => renderTable());
