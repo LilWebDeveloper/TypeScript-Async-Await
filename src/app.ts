@@ -11,12 +11,12 @@ const renderTable = async () => {
         email: string;
         uris: CompanyUser;
     };
-    const userList: ListUser[] = await userData.json();
+    const userList: Array<ListUser> = await userData.json();
     interface ListCompany{
         name: string;
         uri: string;
     };
-    const compList: ListCompany[] = await companiesData.json();
+    const compList: Array<ListCompany> = await companiesData.json();
     let template: string;
     template = '';
         for(var i of compList){
@@ -32,5 +32,6 @@ const renderTable = async () => {
         };
         container.innerHTML = template;
     
+        console.log(compList)
 };
 window.addEventListener("DOMContentLoaded", () => renderTable());
