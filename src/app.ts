@@ -20,9 +20,7 @@ const renderTable = async () => {
     let template: string;
     template = '';
         for(var i of compList){
-            template += '<tr><td>';
-            template += i.name;
-            template += '</td><td>';
+            template += '<tr><td>' + i.name + '</td><td>';
             for(var j of userList){
                 if(j.uris.company === i.uri){
                     template += j.name + '<br>';
@@ -31,7 +29,5 @@ const renderTable = async () => {
             template += "</td></tr>";
         };
         container.innerHTML = template;
-    
-        console.log(compList)
 };
 window.addEventListener("DOMContentLoaded", () => renderTable());
