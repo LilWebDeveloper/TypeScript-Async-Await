@@ -1,15 +1,14 @@
 interface CompanyUser{
     company: string;
-};
+}
 interface ListCompany{
     name: string;
     uri: string;
-};
+}
 interface ListUser extends ListCompany{
     email: string;
     uris: CompanyUser;
-};
-
+}
 const container = document.querySelector('.result')! as HTMLTableElement;
 async function renderTable(): Promise<void> {
     const usersURL: string = 'http://localhost:3500/users';
