@@ -1,11 +1,11 @@
 interface CompanyUser{
     company: string;
 }
-interface ListCompany{
+interface Company{
     name: string;
     uri: string;
 }
-interface ListUser extends ListCompany{
+interface User extends Company{
     email: string;
     uris: CompanyUser;
 }
@@ -13,10 +13,10 @@ const container = document.querySelector('.result')! as HTMLTableElement;
 async function renderTable(): Promise<void> {
     const usersURL: string = 'http://localhost:3500/users';
     const userData: Response = await fetch(usersURL);
-    const user: ListUser[] = await userData.json();
+    const user: User[] = await userData.json();
     const companiesURL: string = 'http://localhost:3500/companies';
     const companiesData: Response = await fetch(companiesURL);
-    const companies: ListCompany[] = await companiesData.json();
+    const companies: Company[] = await companiesData.json();
     let template: string;
     template = '';
         for(var i of companies){
